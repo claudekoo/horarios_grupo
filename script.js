@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://disponibilidad-grupal.onrender.com';
+const API_BASE_URL = 'https://horarios-grupo.onrender.com';
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const TIMES = [
   '07:00', '07:30', '08:00', '08:30', '09:00', '09:30',
