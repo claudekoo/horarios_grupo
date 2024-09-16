@@ -59,7 +59,7 @@ app.post('/submit-availability', async (req, res) => {
     }
 });
 
-app.get('/ping', (req, res) => {
+app.head('/ping', (req, res) => {
     const currentDateTime = new Date().toISOString();
     console.log(`pong - ${currentDateTime}`);
     res.status(200).json({ message: 'pong' });
