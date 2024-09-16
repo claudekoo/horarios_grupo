@@ -24,7 +24,7 @@ h2 {
 
 .container {
   padding: 5px;
-  max-width: 380px;
+  max-width: 360px;
   background-color: var(--form-bg);
   border: var(--border-color) 1px solid;
   border-radius: 0px;
