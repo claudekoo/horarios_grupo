@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chequeo de disponibilidad horaria grupal</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <meta name="description" content="Aplicación para chequear la disponibilidad horaria grupal.">
+  <meta property="og:title" content="Chequeo de disponibilidad horaria grupal">
+  <meta property="og:description" content="Aplicación para chequear la disponibilidad horaria grupal.">
+  <meta property="og:type" content="website">
+</head>
+<body>
+  <header>
+    <h2>Seleccioná tus horarios disponibles</h2>
+  </header>
+
+  <main>
+    <section class="container guidelines">
+      <div>Seleccioná tus horarios disponibles y envialo con un código de grupo y tu nombre. Podés enviarlo nuevamente para sobreescribir tu selección.</div>
+      <div class="bold">Se recomienda primero chequear que el código no haya sido utilizado por otros.</div>
+    </section>
+
+    <section>
+      <button id="openModalBtn" class="btn">Chequear horarios</button>
+    </section>
+    
+    <section class="container schedule-container">
+      <!-- Weekdays Header -->
+      <div class="weekdays">
+        <div class="time-header"></div> <!-- Placeholder for time column -->
+        <div class="weekday">Lu</div>
+        <div class="weekday">Ma</div>
+        <div class="weekday">Mi</div>
+        <div class="weekday">Ju</div>
+        <div class="weekday">Vi</div>
+        <div class="weekday">Sa</div>
+        <div class="weekday">Do</div>
+      </div>
+
+      <!-- Time Slots Grid -->
+      <div class="time-grid">
+        <!-- JavaScript will dynamically generate the grid -->
+      </div>
+    </section>
+
+    <section>
+      <form id="availabilityForm" class="form">
+        <div class="form-group">
+          <label for="code">Código:</label>
+          <input type="text" id="code" name="code" required>
+        </div>
+      
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+      
+        <div class="form-group">
+          <button type="submit" class="btn">Enviar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Modal structure -->
+    <div id="availabilityModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+      <div class="modal-content container">
+        <span class="close-modal" role="button" aria-label="Close modal">&times;</span>
+        <h2 id="modalTitle">Horarios de grupo</h2>
+        <form id="checkAvailabilityForm" class="form">
+          <div class="form-group">
+            <label for="groupCode">Código:</label>
+            <input type="text" id="groupCode" name="groupCode" required>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn">Chequear</button>
+          </div>
+        </form>
+        <div id="availabilityResults">
+          <table id="availabilityGrid">
+            <!-- Time slots and availability cells will be dynamically added here -->
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
