@@ -36,15 +36,34 @@ function createTimeSlot(day, time) {
   slot.className = 'time-slot';
   slot.dataset.day = day;
   slot.dataset.time = time;
-  slot.addEventListener('click', toggleTimeSlot);
+  slot.addEventListener('mousedown', startSelection);
+  slot.addEventListener('mouseenter', continueSelection);
+  slot.addEventListener('mouseup', endSelection);
   return slot;
 }
 
-// Toggle the 'selected' class on a time slot
-function toggleTimeSlot(event) {
-  const slot = event.target;
-  slot.classList.toggle('selected');
-  console.log(`Selected: ${slot.dataset.day} ${slot.dataset.time}`);
+// Variables to track selection
+let isSelecting = false;
+let startSlot = null;
+
+// Start selection
+function startSelection(event) {
+  isSelecting = true;
+  startSlot = event.target;
+  startSlot.classList.toggle('selected');
+}
+
+// Continue selection
+function continueSelection(event) {
+  if (isSelecting) {
+    event.target.classList.toggle('selected');
+  }
+}
+
+// End selection
+function endSelection(event) {
+  isSelecting = false;
+  startSlot = null;
 }
 
 // Open the modal

@@ -16,6 +16,7 @@ body {
   color: var(--text-color);
   text-align: center;
   background-color: var(--background-color);
+  user-select: none;
 }
 
 h2 {
