@@ -1,4 +1,4 @@
-# Horarios-Grupo
+# Horarios_Grupo
 
 [Visit the Application](https://claudekoo.github.io/horarios_grupo/)
 
